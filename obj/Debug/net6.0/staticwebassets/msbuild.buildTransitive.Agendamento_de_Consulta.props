@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Agendamento_de_Consulta.props" />
+</Project>

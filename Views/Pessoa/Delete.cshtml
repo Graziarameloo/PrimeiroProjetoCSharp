@@ -1,0 +1,211 @@
+﻿@model Agendamento_de_Consulta.Models.Agendamento.PESSOAS
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 32px;
+            color: #333;
+        }
+
+        .confirm-delete {
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+        }
+
+        h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .person-details {
+            margin-bottom: 40px;
+        }
+
+        h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }*/
+
+        dd, dt {
+            display: inline-block;
+            width: 100%;
+            height: 36px;
+            padding: 6px 12px;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            vertical-align: top; /* alinha o topo dos elementos */
+            margin: 0;
+            
+        }
+
+        dd {
+            display: flex;
+            width: 100%;
+            height: 20px;
+            padding: 6px 12px;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #f0ffff
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            vertical-align: center; /* alinha o topo dos elementos */
+            margin: 0;
+        }
+
+
+        dt {
+            display: flex;
+            width: 100%;
+            height: 20px;
+            padding: 6px 12px;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 1.42857143;
+            color: back;
+            background-color: #ccc;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            vertical-align: center; /* alinha o topo dos elementos */
+            margin: 0;
+        }
+        .delete-form {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            text-decoration: none;
+            background-color: #FF3030;
+            font-size: 18px;
+        }
+
+        .btn-secondary {
+            background-color: #ccc;
+        }
+
+        .voltar-link {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            text-decoration: none;
+            background-color: #D3D3D3;
+            font-size: 18px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Delete</h1>
+
+    <div class="confirm-delete">
+        <h3>Você realmente deseja excluir?</h3>
+
+        <div class="person-details">
+            <h4>PESSOA</h4>
+            <hr>
+
+            <dl class="table">
+                <dt>Nome</dt>
+       <dd>@Html.DisplayFor(model => model.Nome)</dd>
+
+                <dt>CPF</dt>
+                <dd>@Html.DisplayFor(model => model.CPF)</dd>
+
+                <dt>Telefone</dt>
+                <dd>@Html.DisplayFor(model => model.Tel.NUMERO)</dd>
+
+                <dt>Tipo de Telefone</dt>
+                <dd>@Html.DisplayFor(model => model.Tel.Teltip.Tipo)</dd>
+
+                <dt>Número da Casa</dt>
+                <dd>@Html.DisplayFor(model => model.End.NUMEROCASA)</dd>
+
+                <dt>CEP</dt>
+                <dd>@Html.DisplayFor(model => model.End.CEP)</dd>
+
+                <dt>Bairro</dt>
+                <dd>@Html.DisplayFor(model => model.End.BAIRRO)</dd>
+
+                <dt>Cidade</dt>
+                <dd>@Html.DisplayFor(model => model.End.CIDADE)</dd>
+
+                <dt>Estado</dt>
+                <dd>@Html.DisplayFor(model => model.End.ESTADO)</dd>
+            </dl>
+        </div>
+
+
+        <form asp-action="Delete">
+            <input type="submit" value="Delete" class="btn btn-danger">
+           
+            <a asp-action="Index" class="voltar-link">Voltar</a>
+        </form>
+    </div>
+
+    
+
+</body>
+</html>
+

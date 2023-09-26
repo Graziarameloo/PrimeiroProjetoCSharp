@@ -1,0 +1,79 @@
+﻿@model Agendamento_de_Consulta.Models.Agendamento.PESSOAS
+
+
+
+
+
+<h1>Detalhes</h1>
+
+<table class="table">
+    <caption>Pacientes</caption>
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">CPF</th>
+            <th scope="col">Id Telefone</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Id Endereço</th>
+            <th scope="col">Endereço</th>
+            <th scope="col">Número</th>
+            <th scope="col">CEP</th>
+            <th scope="col">Bairro</th>
+            <th scope="col">Cidade</th>
+            <th scope="col">Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+
+            <td>@Html.DisplayFor(model => model.Id)</td>
+            <td>@Html.DisplayFor(model => model.Nome)</td>
+            <td>@Html.DisplayFor(model => model.CPF)</td>
+            <td>@Html.DisplayFor(model => model.Tel.IdTel)</td>
+            <td>@Html.DisplayFor(model => model.Tel.NUMERO)</td>
+            <td>@Html.DisplayFor(model => model.Tel.Teltip.Tipo)</td>
+            <td>@Html.DisplayFor(model => model.End.IdEndereco)</td>
+            <td>@Html.DisplayFor(model => model.End.LOGRADOURO)</td>
+            <td>@Html.DisplayFor(model => model.End.NUMEROCASA)</td>
+            <td>@Html.DisplayFor(model => model.End.CEP)</td>
+            <td>@Html.DisplayFor(model => model.End.BAIRRO)</td>
+            <td>@Html.DisplayFor(model => model.End.CIDADE)</td>
+            <td>@Html.DisplayFor(model => model.End.ESTADO)</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<style>
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .table th,
+        .table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .table th {
+            background-color: #f8f9fa;
+        }
+
+    caption {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    }
+</style>
+
+<div>
+    @Html.ActionLink("Editar", "Edit", new {  id = Model.Id }) |
+    <a asp-action="Index">Retornar para a Lista</a>
+</div>
+

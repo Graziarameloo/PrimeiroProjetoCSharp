@@ -1,0 +1,127 @@
+﻿@model IEnumerable<Agendamento_de_Consulta.Models.Agendamento.PESSOAS>
+
+@{
+    ViewData["Title"] = "Consultas";
+}
+
+<h1>PACIENTES</h1>
+
+<style>
+    .btn-edit,
+    .btn-details,
+    .btn-delete {
+        color: #fff;
+        padding: 5px 10px;
+        margin-right: 5px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .btn-edit {
+        background-color: #007bff;
+    }
+
+    .btn-details {
+        background-color: #28a745;
+    }
+
+    .btn-delete {
+        background-color: #dc3545;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .table th,
+        .table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .table th {
+            background-color: #f8f9fa;
+        }
+
+</style>
+
+<p>
+    <a asp-action="Create">Novo Paciente</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CPF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tel.DDD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tel.NUMERO)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.End.LOGRADOURO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.End.NUMEROCASA)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.End.BAIRRO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.End.CIDADE)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CPF)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tel.DDD)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tel.NUMERO)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.End.LOGRADOURO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.End.NUMEROCASA)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.End.BAIRRO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.End.CIDADE)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new {  id=item.Id }) |
+                    @Html.ActionLink("Detalhes", "Details", new {  id=item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new {  id=item.Id  })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

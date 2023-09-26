@@ -1,0 +1,98 @@
+﻿@model Agendamento_de_Consulta.Models.Agendamento.PESSOAS
+
+@{
+    ViewData["Title"] = "Create";
+}
+<br />
+
+<h2 style="font-size: 24px;font-weight:bold;margin-bottom: 10px;color: #007bff;"> Novo Paciente</h2>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-10" style="background-color: #f8f9fa; padding: 20px; border: 10px; solid: #FFFFFF; border-radius: 4px;">
+        <form asp-action="create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" style="padding: 10px;border: 1px solid #ccc;margin-bottom: 10px;width: 100%;" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CPF" class="control-label"></label>
+                <input asp-for="CPF" class="form-control" style="padding: 10px;border: 1px solid #ccc;margin-bottom: 10px;width: 100%;" />
+                <span asp-validation-for="CPF" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tel.DDD" class="text-danger"></label>
+                <input asp-for="Tel.DDD" class="form-control" style="padding: 10px;border: 1px solid #ccc;margin-bottom: 10px;width: 100%;" />
+                <span asp-validation-for="Tel.DDD" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tel.NUMERO" class="text-danger"></label>
+                <input asp-for="Tel.NUMERO" class="form-control" style="padding: 10px;border: 1px solid #ccc;margin-bottom: 10px;width: 100%;" />
+                <span asp-validation-for="Tel.NUMERO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tel.Teltip.Tipo" class="control-label"></label>
+                <select asp-for="Tel.Teltip.Tipo" class="form-control" style="padding: 10px;border: 1px solid #ccc;margin-bottom: 10px;width: 100%;">
+                    <option value="">-- Selecione o tipo --</option>
+                    <option value="1">Celular</option>
+                    <option value="2">Trabalho</option>
+                    <option value="3">Casa</option>
+                    <option value="4">Recado</option>
+                </select>
+
+
+
+                <div class="form-group">
+                    <label asp-for="End.LOGRADOURO" class="text-danger"></label>
+                    <input asp-for="End.LOGRADOURO" class="form-control" style="padding: 10px;border: 1px solid #ccc;margin-bottom: 10px;width: 100%;" />
+                    <span asp-validation-for="End.LOGRADOURO" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="End.NUMEROCASA" class="text-danger"></label>
+                    <input asp-for="End.NUMEROCASA" class="form-control" style="padding: 10px;border: 1px solid #ccc;margin-bottom: 10px;width:100%;" />
+                    <span asp-validation-for="End.NUMEROCASA" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="End.CEP" class="text-danger"></label>
+                    <input asp-for="End.CEP              " class="form-control" style="padding: 10px;border: 1px solid #ccc;margin-bottom: 10px;width: 100%;" />
+                    <span asp-validation-for="End.CEP" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="End.BAIRRO" class="text-danger"></label>
+                    <input asp-for="End.BAIRRO" class="form-control" style="padding: 10px;border: 1px solid #ccc;margin-bottom: 10px;width: 100%;" />
+                    <span asp-validation-for="End.BAIRRO" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="End.CIDADE" class="text-danger"></label>
+                    <input asp-for="End.CIDADE" class="form-control" style="padding: 10px;border: 1px solid #ccc;margin-bottom: 10px;width: 100%;" />
+                    <span asp-validation-for="End.CIDADE" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="End.ESTADO" class="text-danger"></label>
+                    <input asp-for="End.ESTADO" class="form-control" style="padding: 10px;border: 1px solid #ccc;margin-bottom: 10px;width: 100%;" />
+                    <span asp-validation-for="End.ESTADO" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" style="padding: 10px 20px;background-color: #007bff;color: #fff;border: none;cursor: pointer;width: 100%;" value="Criar" class="btn btn-defaut" />
+                </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
+
+
